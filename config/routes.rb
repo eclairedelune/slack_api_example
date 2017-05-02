@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'chats/index'
+  get '/chats', to: 'chats#index', as: 'chats'
 
-  get 'chats/new'
+  get '/chats/:channel/new_message', to: 'chats#new_message', as: 'new_message'
 
-  get 'chats/create'
+  post '/chats/:channel/send_message', to: 'chats#send_message', as: 'send_message'
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -59,4 +60,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end

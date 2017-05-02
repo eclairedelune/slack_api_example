@@ -14,5 +14,7 @@ module SlackApiExample
     config.generators do |g|
       g.test_framework :minitest, spec: true
     end
+    # Automatically load all code from <rails_root>/lib
+    config.autoload_paths << Rails.root.join('lib')
   end
 end

@@ -1,0 +1,6 @@
+<%= form_tag send_message_path(@channel.name), method: :post do %>
+<%= label_tag :message %>
+<%= text_field_tag :message %>
+
+<%= submit_tag "Send it!" %>
+<% end %>
